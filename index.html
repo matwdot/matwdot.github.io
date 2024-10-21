@@ -68,7 +68,20 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
-            text-shadow: 0 0 2px #1e2030;
+        }
+
+        p {
+        	display: flex;
+        	flex-direction: column;
+        	text-align: left;
+        }
+        p span {
+        	color: #cad3f5;
+        	font-size: 12px;
+        }
+        span code {
+        	font-weight: 700;
+        	color: #a6da95;
         }
         
         .terminal {
@@ -136,8 +149,11 @@
     
     <div class="container">
         <div class="content">
-            <h1>SysUtil - Instalação</h1>
-            <p>Para usar, copie o comando abaixo e cole em seu terminal:</p>
+            <h1>SysUtil - v2.5</h1>
+            <p>
+            	Para usar, copie o comando abaixo e cole em seu terminal: <br>
+            	<span><b>Importante:</b> Antes de executar o comando abaixo, verifique se a pasta sysutil já existe no diretório atual. <b>Caso exista, execute o seguinte comando para removê-la:</b> <code>rm -rf sysutil</code></span>
+            </p>
             <div class="terminal">
                 <pre><code>git clone https://github.com/matwdot/sysutil.git && cd sysutil && chmod 777 -R * && ./sysutil.sh</code></pre>
                 <span class="cursor"></span>
