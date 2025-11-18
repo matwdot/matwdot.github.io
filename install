@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Script de instalação do SysUtil
+# Autor: Matheus Wesley
+# Versão: 7.0
+
+set -e  # Para em erro
+
+info_msg " Baixando o Sysutil..."
+
+# Verifica se git está instalado
+if ! command -v git &> /dev/null; then
+    error_msg "❌ Git não encontrado. Instale git primeiro (ex.: apt install git ou brew install git)."
+    exit 1
+fi
+
+# Diretório de instalação (ex.: ~/.meu-projeto)
+INSTALL_DIR="$HOME/.meu-projeto"
+if [ -d "$INSTALL_DIR" ]; then
+    info_msg "📁 Diretório $INSTALL_DIR já existe. Removendo..."
+    rm -rf "$INSTALL_DIR"
+fi
+
+# Clona o repo (ou baixe via wget se preferir arquivos soltos)
+REPO_URL="https://github.com/matwdot/sysutil.git"
+git clone "$REPO_URL" "$INSTALL_DIR" --quiet
+cd "$INSTALL_DIR"
+
+# Torna o script principal executável
+chmod +x sysutil
+
+# Executa o script principal (passe argumentos se precisar: $@)
+info_msg "🚀 Executando o projeto..."
+./sysutil
+
+success_msg "✅ Instalação concluída! O projeto está em $INSTALL_DIR."
+info_msg "Para rodar novamente: cd $INSTALL_DIR && ./sysutil"
