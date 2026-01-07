@@ -86,8 +86,9 @@ h1 {
 }
 
 .subtitle {
-    color: #6b7280;
-    font-size: 1.1rem;
+    color: #050505;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)
 }
 
 .version {
@@ -164,6 +165,10 @@ footer a:hover {
 
 .hero-with-bg .subtitle,
 .hero-with-bg .author {
-    color: #374151;
+    color: #272a30;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.hero-with-bg .subtitle {
+    font-size: 1.1rem;
 }
