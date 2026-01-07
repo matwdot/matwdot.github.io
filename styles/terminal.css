@@ -1,0 +1,98 @@
+/* Terminal Styles */
+.terminal-wrapper {
+    background: #111827;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease 0.2s both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.terminal-header {
+    background: #1f2937;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #374151;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.prompt {
+    color: #9ca3af;
+    user-select: none;
+}
+
+.command {
+    color: #f3f4f6;
+    word-break: break-all;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #f3f4f6;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    animation: slideUp 0.6s ease 0.4s both;
+}
+
+.copy-btn {
+    background: #111827;
+    color: #f9fafb;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background: #166534;
+}
+
+@media (max-width: 640px) {
+    .terminal-body {
+        padding: 1rem;
+        font-size: 0.75rem;
+    }
+}

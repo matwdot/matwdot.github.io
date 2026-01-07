@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysUtil</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/terminal.css">
+    <link rel="stylesheet" href="../styles/docs.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">← Voltar</a>
+        <div class="nav-links">
+            <a href="#docs" class="nav-link">Documentação</a>
+            <a href="https://github.com/matwdot/sysutil" target="_blank" class="nav-link">GitHub →</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero">
+                <h1>SysUtil <span class="version">v7.0</span></h1>
+                <p class="subtitle">Utilitário para instalação e manutenção do SysPDV PDV em Linux</p>
+                <p class="author">Desenvolvido por Matheus Wesley - Casa Magalhães</p>
+            </div>
+
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                </div>
+                <div class="terminal-body">
+                    <span class="prompt">$ </span><span class="command" id="command">curl -fsSL https://raw.githubusercontent.com/matwdot/sysutil/master/install.sh | bash && source ~/.bashrc</span><span class="cursor"></span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="copy-btn" id="copy-btn">Copiar comando</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs-section" id="docs">
+        <h2>Documentação</h2>
+
+        <h3>Instalação</h3>
+        <pre><code>curl -fsSL https://raw.githubusercontent.com/matwdot/sysutil/master/install.sh | bash && source ~/.bashrc</code></pre>
+
+        <h3>Atualização</h3>
+        <pre><code>curl -fsSL https://raw.githubusercontent.com/matwdot/sysutil/master/update.sh | bash</code></pre>
+
+        <h3>Uso</h3>
+        <pre><code>sysutil</code></pre>
+        <p>Navegue com as setas <code>↑</code>/<code>↓</code> e selecione com <code>Enter</code>. Pressione <code>q</code> ou <code>0</code> para sair.</p>
+
+        <h3>Menu Principal</h3>
+        <table class="docs-table">
+            <thead>
+                <tr>
+                    <th>Opção</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>SysPDV PDV</td><td>Instalar ou atualizar o sistema</td></tr>
+                <tr><td>VPN Connect</td><td>Gerenciar VPN Wanbee</td></tr>
+                <tr><td>MFe/DocGate (Descontinuado)</td><td>Drivers MFe e configuração DocGate</td></tr>
+                <tr><td>Configurar Periféricos</td><td>Editar setty e regras USB</td></tr>
+                <tr><td>Configurar Biométrico</td><td>Servidor biométrico FH80</td></tr>
+                <tr><td>Limitar Consumo Tec55</td><td>Limitador CPU para Gertec55</td></tr>
+                <tr><td>Transferência SCP</td><td>Copiar arquivos entre máquinas</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Funcionalidades</h3>
+
+        <div class="card">
+            <h4>SysPDV PDV</h4>
+            <p><strong>Instalar SysPDV PDV</strong></p>
+            <ul>
+                <li>Baixa o instalador da build informada</li>
+                <li>Configura periféricos</li>
+                <li>Instala VPN</li>
+                <li>Instala driver MFe</li>
+            </ul>
+            <p><strong>Atualizar SysPDV PDV</strong></p>
+            <ul>
+                <li>Faz backup dos arquivos <code>.fdb</code></li>
+                <li>Baixa e executa o instalador da nova build</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>VPN Connect</h4>
+            <p><strong>Instalar VPN</strong></p>
+            <ul>
+                <li>Ubuntu 18.04: usa pacote <code>.deb</code> i386</li>
+                <li>Ubuntu 22.04+: usa script <code>wnbinstall.sh</code></li>
+                <li>Solicita a chave de ativação</li>
+            </ul>
+            <p><strong>Remover VPN</strong></p>
+            <ul>
+                <li>Salva backup da chave em <code>chave.txt</code></li>
+                <li>Remove pacotes e diretórios</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>MFe/DocGate</h4>
+            <p><strong>Instalar Driver MFe (Descontinuado)</strong></p>
+            <ul>
+                <li>Baixa do site da SEFAZ-CE</li>
+                <li>Versão padrão: 02.05.18</li>
+                <li>Extrai e executa instalador</li>
+            </ul>
+            <p><strong>Remover Driver MFe</strong></p>
+            <ul>
+                <li>Executa script de remoção em <code>/opt/sefaz/cco/</code></li>
+            </ul>
+            <p><strong>Configurar DocGate (Descontinuado)</strong></p>
+            <ul>
+                <li>Extrai DocGate v5 para <code>/opt/docgate</code></li>
+                <li>Faz backup da instalação anterior</li>
+                <li>Abre utilitário de configuração</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Configurar Periféricos</h4>
+            <p>Abre para edição:</p>
+            <ul>
+                <li><code>/usr/local/bin/setty</code> - configuração de portas seriais</li>
+                <li><code>/etc/udev/rules.d/90-dispositivos-usb.rules</code> - regras USB</li>
+            </ul>
+            <p>Usa Sublime Text se disponível, senão nano.</p>
+        </div>
+
+        <div class="card">
+            <h4>Configurar Biométrico</h4>
+            <ul>
+                <li>Aplica permissões em <code>/opt/ServidorBiometrico/</code></li>
+                <li>Abre utilitário <code>biometria</code></li>
+                <li>Executa <code>iniciaBiometriaFH80.sh</code></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Limitar Consumo Tec55</h4>
+            <ul>
+                <li>Instala <code>cpulimit</code></li>
+                <li>Copia scripts para <code>/usr/local/bin</code></li>
+                <li>Aplica permissões em <code>/opt/Gertec55</code></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Transferência SCP</h4>
+            <p>Copia arquivos/pastas de outra máquina via SCP:</p>
+            <ul>
+                <li>IP do host remoto</li>
+                <li>Caminho do arquivo/pasta origem</li>
+                <li>Diretório local de destino</li>
+            </ul>
+        </div>
+
+        <h3>Requisitos</h3>
+        <ul>
+            <li>Linux (Ubuntu 18.04, 22.04 ou superior)</li>
+            <li>Git</li>
+            <li>Curl</li>
+            <li>Wine (para executar instalador Windows do SysPDV)</li>
+            <li>Acesso root/sudo</li>
+        </ul>
+
+        <h3>Atalhos</h3>
+        <table class="docs-table">
+            <thead>
+                <tr>
+                    <th>Tecla</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>↑</code> / <code>↓</code></td><td>Navegar menu</td></tr>
+                <tr><td><code>Enter</code></td><td>Selecionar opção</td></tr>
+                <tr><td><code>q</code> ou <code>0</code></td><td>Sair</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Suporte</h3>
+        <p>Em caso de problemas, abra uma issue no GitHub:<br>
+        <a href="https://github.com/matwdot/sysutil/issues" target="_blank">github.com/matwdot/sysutil/issues</a></p>
+    </section>
+
+    <footer>
+        <p>Feito por <a href="https://github.com/matwdot" target="_blank">matwdot</a> · Casa Magalhães</p>
+    </footer>
+
+    <script src="../scripts/copy.js"></script>
+</body>
+</html>

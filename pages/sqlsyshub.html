@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL SysHub</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/download.css">
+    <link rel="stylesheet" href="../styles/docs.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">← Voltar</a>
+        <div class="nav-links">
+            <a href="#docs" class="nav-link">Documentação</a>
+            <a href="https://github.com/matwdot/SQLSysHub" target="_blank" class="nav-link">GitHub →</a>
+        </div>
+    </nav>
+
+    <section class="hero-section hero-with-bg">
+        <div class="hero-bg-image" style="background-image: url('../assets/Capa_SQLSysHub.jpg');"></div>
+        <div class="hero-container">
+            <div class="hero">
+                <h1>SQL SysHub</h1>
+                <p class="subtitle">Gerenciamento e execução de queries SQL com interface gráfica moderna</p>
+                <p class="author">Desenvolvido por Matheus Wesley - Casa Magalhães</p>
+            </div>
+
+            <div class="download-box">
+                <p>Baixe a versão mais recente para Windows</p>
+                <a href="https://github.com/matwdot/SQLSysHub/releases/download/latest/SQLSysHub-latest.zip" class="download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download ZIP
+                </a>
+                <div class="db-badges">
+                    <span class="db-badge">Firebird</span>
+                    <span class="db-badge">SQL Server</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs-section" id="docs">
+        <h2>Documentação</h2>
+
+        <h3>Bancos Suportados</h3>
+        <ul>
+            <li>Firebird</li>
+            <li>SQL Server</li>
+        </ul>
+
+        <h3>Operações Disponíveis</h3>
+
+        <div class="card">
+            <h4>Apagar Certificado</h4>
+            <p>Remove o certificado digital do sistema, limpando os campos de certificado, senha e número de série.</p>
+        </div>
+
+        <div class="card">
+            <h4>Buscar Produto por Código</h4>
+            <p>Localiza um produto específico pelo código, retornando código, descrição e NCM.</p>
+        </div>
+
+        <div class="card">
+            <h4>Cancelar Cupom</h4>
+            <p>Cancela cupons fiscais definindo STACUP e STACUPVRF como 'F'. Pode ser aplicado a todos os caixas ou filtrado por número específico.</p>
+        </div>
+
+        <div class="card">
+            <h4>Consultar NCM Inexistente</h4>
+            <p>Busca transações rejeitadas por NCM inexistente em um período de datas. Retorna nota, data, produto, descrição, caixa e mensagem de erro.</p>
+        </div>
+
+        <div class="card">
+            <h4>Corrigir Erro de Equipamento</h4>
+            <p>Remove o número de série do caixa para corrigir erros de equipamento.</p>
+        </div>
+
+        <div class="card">
+            <h4>Limpar Tabelas do Fisco</h4>
+            <p>Remove todos os dados das tabelas fiscais (FISCO_PRODUTOAUX, FISCO_DOCUMENTOFISCAL, FISCO_CUPOMFISCAL, etc).</p>
+        </div>
+
+        <div class="card">
+            <h4>Ver NCMs a Vencer</h4>
+            <p>Consulta NCMs próximos do vencimento usando arquivo JSON do Siscomex. Considera vendas do último ano e classifica por status: VENCIDO, A VENCER (próximo), A VENCER ou NCM NÃO ENCONTRADO.</p>
+        </div>
+
+        <h3>Como Usar</h3>
+        <ol class="steps">
+            <li>Selecione o tipo de banco no painel lateral</li>
+            <li>Preencha os dados de conexão (Host, Porta, Usuário, Senha)</li>
+            <li>Clique em "Conectar"</li>
+            <li>Escolha uma operação predefinida ou digite sua query SQL</li>
+            <li>Execute e visualize os resultados na tabela</li>
+        </ol>
+
+        <h3>Requisitos</h3>
+        <ul>
+            <li>Windows 7 ou superior</li>
+            <li>Drivers de banco conforme necessário (Firebird, ODBC para SQL Server)</li>
+        </ul>
+
+        <h3>Suporte</h3>
+        <p>Em caso de problemas, abra uma issue no GitHub:<br>
+        <a href="https://github.com/matwdot/SQLSysHub/issues" target="_blank">github.com/matwdot/SQLSysHub/issues</a></p>
+    </section>
+
+    <footer>
+        <p>Feito por <a href="https://github.com/matwdot" target="_blank">matwdot</a> · Casa Magalhães</p>
+    </footer>
+</body>
+</html>
